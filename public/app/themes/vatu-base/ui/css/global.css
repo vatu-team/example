@@ -1,0 +1,59 @@
+/*
+* CSS Methodology
+*
+* Requirements:
+* Methodology - https://getbem.com
+* Fluid scales - https://utopia.fyi/
+*/
+
+/*
+1. Global
+*/
+@import "./01-global/_file-header.css";
+
+
+/*
+2. Layout
+Any styles affecting the visual layout of the site.
+*/
+@import "./02-layout/_reset.css";
+@import "./02-layout/_a11y.css";
+@import "./02-layout/_alignment.css";
+@import "./02-layout/_animation.css";
+@import "./02-layout/_structure.css";
+
+
+/*
+3. Branding
+The visual branding used on the site.
+*/
+@import "./03-branding/_colors.css";
+@import "./03-branding/_typography.css";
+
+
+/*
+4. Elements
+Generic HTML elements with class overrides.
+*/
+@import "./04-elements/_*.css";
+
+
+/*
+5. Components
+Components are collections for blocks in a pattern (e.g. card, breadcrumbs).
+*/
+@import "./05-components/_*.css";
+
+
+/*
+6. Blocks
+Generic or class-based block styles.
+*/
+@import "./06-blocks/_*.css";
+
+
+/*
+7. Libraries
+Any external CSS libraries.
+*/
+@import "./07-libraries/_*.css";

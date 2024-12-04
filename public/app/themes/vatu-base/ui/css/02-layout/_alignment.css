@@ -1,0 +1,30 @@
+/*
+* Alignment
+*/
+
+.u-text--center {
+	text-align: center;
+}
+
+.u-align--center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.u-align--left {
+	margin-right: auto;
+}
+
+.u-align--right {
+	margin-left: auto;
+}
+
+.u-align--middle {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.u-height--full {
+	min-height: 100vh;
+}

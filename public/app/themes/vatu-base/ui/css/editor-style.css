@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #EditorStyles
+   Custom rules to be applied only inside the WordPress Editor.
+   ========================================================================== */
+
+
+
+/* Page title
+   ========================================================================== */
+.edit-post-visual-editor__post-title-wrapper {
+  margin: 2rem auto 4rem !important
+ }
+
+/* Layout
+   ========================================================================== */
+
+/* Remove margin-block-start if any element immediately follows a H tag */
+h1 + *,
+h2 + *,
+h3 + *,
+h4 + *,
+h5 + *,
+h6 + * {
+	margin-block-start: 0px !important;
+}

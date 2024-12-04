@@ -1,0 +1,32 @@
+{
+    "name": "vatu/tools",
+    "type": "metapackage",
+    "license": "MIT",
+    "description": "Development tools.",
+    "minimum-stability": "stable",
+    "repositories": [
+      {
+      "type": "vcs",
+      "url": "https://github.com/vatu-team/dev-tools.git",
+      "only": ["vatu/dev-tools"]
+      }
+    ],
+    "require-dev": {
+      "vatu/dev-tools": "dev-main",
+      "slevomat/coding-standard": "^8.0"
+    },
+    "config": {
+      "allow-plugins": {
+        "phpstan/extension-installer": true,
+        "dealerdirect/phpcodesniffer-composer-installer": true
+      }
+    },
+    "scripts": {
+      "post-install-cmd": [
+        "sed 's/function wp_hash_password/#function wp_hash_password/' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php > vendor/php-stubs/wordpress-stubs/temp; cat vendor/php-stubs/wordpress-stubs/temp > vendor/php-stubs/wordpress-stubs/wordpress-stubs.php; rm vendor/php-stubs/wordpress-stubs/temp;",
+        "sed 's/function wp_set_password/#function wp_set_password/' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php > vendor/php-stubs/wordpress-stubs/temp; cat vendor/php-stubs/wordpress-stubs/temp > vendor/php-stubs/wordpress-stubs/wordpress-stubs.php; rm vendor/php-stubs/wordpress-stubs/temp;",
+        "sed 's/function wp_generate_password/#function wp_generate_password/' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php > vendor/php-stubs/wordpress-stubs/temp; cat vendor/php-stubs/wordpress-stubs/temp > vendor/php-stubs/wordpress-stubs/wordpress-stubs.php; rm vendor/php-stubs/wordpress-stubs/temp;",
+        "sed 's/function wp_check_password/#function wp_check_password/' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php > vendor/php-stubs/wordpress-stubs/temp; cat vendor/php-stubs/wordpress-stubs/temp > vendor/php-stubs/wordpress-stubs/wordpress-stubs.php; rm vendor/php-stubs/wordpress-stubs/temp;"
+      ]
+    }
+}

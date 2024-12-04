@@ -1,0 +1,4 @@
+header.wp-block-template-part {
+	background:var( --color--primary );
+	color:white;
+}

@@ -1,0 +1,102 @@
+# System
+
+error_log
+.DS_Store
+
+## Archives
+
+# It's better to unpack these files and commit the raw source because
+# git has its own built in compression methods.
+*.7z
+*.jar
+*.rar
+*.zip
+*.gz
+*.gzip
+*.tgz
+*.bzip
+*.bzip2
+*.bz2
+*.xz
+*.lzma
+*.cab
+*.xar
+
+# Packing-only formats
+*.iso
+*.tar
+
+# Package management formats
+*.dmg
+*.xpi
+*.gem
+*.egg
+*.deb
+*.rpm
+*.msi
+*.msm
+*.msp
+*.txz
+
+# Development
+
+## Docker
+/.docker/*
+
+## NodeJS
+/node_modules/*
+/package-lock.json
+
+# Server
+.env
+.env.*
+*.env
+!/.env.example
+*.log
+
+# Applications
+
+## Composer
+auth.json
+/vendor
+/tools/vendor
+
+## Tests
+/.phpunit.cache
+/phpcs.xml
+/phpstan.neon
+/phpunit.xml
+/tests/php/Coverage
+
+## Config
+/config/environments/local.php
+
+## WordPress
+/public/app/cache/*
+/public/app/languages/*
+!/public/app/languages/index.php
+/public/app/upgrade
+/public/app/uploads/*
+/public/app/wflogs/*
+/public/wp/
+/public/.htaccess
+/public/app/advanced-cache.php
+/public/app/db.php
+/public/app/object-cache.php
+
+!/public/app/uploads/.gitkeep
+
+## Plugins
+/public/app/plugins/*
+!/public/app/plugins/index.php
+/public/app/mu-plugins/*
+!/public/app/mu-plugins/index.php
+!/public/app/mu-plugins/site-config.php
+
+## Themes
+/public/app/themes/*
+!/public/app/themes/base-theme
+!/public/app/themes/index.php
+
+## WPCLI
+wp-cli.local.yml

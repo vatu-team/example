@@ -1,0 +1,220 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+# Vatu:    Commit
+# Version: 1.0.0
+# Author:  Michael Bragg <mike@vatu.co.uk>
+
+name: 'Commit'
+
+on:
+
+  workflow_dispatch:
+
+  push:
+
+concurrency:
+  group: ${{ github.workflow }}--${{ github.ref_name || github.head_ref }}
+  cancel-in-progress: true
+
+env:
+  COMPOSER_ALLOW_SUPERUSER: "1" # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
+
+jobs:
+
+  # Security Test
+
+  php-security:
+    name: 'PHP Security Analysis'
+    runs-on: 'ubuntu-latest'
+
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        php-version: ['8.3']
+
+    steps:
+
+      - name: 'Check out the repository.'
+        uses: 'actions/checkout@v4.2.2'
+
+      - name: 'Set up PHP environment.'
+        uses: 'shivammathur/setup-php@2.31.1'
+        with:
+          coverage: 'none'
+          ini-values: "memory_limit=-1"
+          tools: 'composer'
+          ini-file: none
+          php-version: "${{ matrix.php-version }}"
+        env:
+          COMPOSER_TOKEN: ${{ secrets.github-token }}
+
+      - name: "Add Composer config."
+        run: |
+          composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
+
+      - name: 'Validate Composer file.'
+        run: |
+          composer validate --working-dir=tools --ansi --strict
+          composer validate --ansi --strict
+
+      - name: 'Get Composer Cache Directory.'
+        id: 'composer-cache'
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: 'Sets up Caching.'
+        uses: 'actions/cache@v4.1.2'
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
+
+      - name: 'Install dependencies.'
+        run: |
+          composer install --no-interaction --prefer-dist
+
+      - name: 'Logs debug information.'
+        run: |
+          php --version
+          composer --version
+
+      - name: 'Run security test.'
+        run: |
+          composer audit --ansi
+
+  # Code Checking
+
+  php-lint:
+    name: "PHP Parallel Lint"
+    needs: php-security
+    uses: vatu-team/workflows/.github/workflows/php-parallel-lint.yml@1.12.0
+    with:
+      runs-on: 'self-hosted'
+      version-php: '8.3'
+    secrets: inherit
+
+  phpcs:
+    name: "PHP CodeSniffer"
+    needs: php-lint
+    uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.12.0
+    with:
+      runs-on: 'self-hosted'
+      version-php: '8.3'
+    secrets: inherit
+
+  # Unit Tests
+
+  php-unit:
+    name: 'PHP Unit Tests'
+    needs: phpcs
+    runs-on: 'self-hosted'
+
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        php-version: ['8.3']
+
+    steps:
+
+      - name: 'Check out the repository.'
+        uses: 'actions/checkout@v4.2.2'
+
+      - name: 'Set up PHP environment.'
+        uses: 'shivammathur/setup-php@2.31.1'
+        with:
+          coverage: 'xdebug'
+          ini-values: "memory_limit=-1"
+          tools: 'composer'
+          ini-file: none
+          php-version: "${{ matrix.php-version }}"
+        env:
+          COMPOSER_TOKEN: ${{ secrets.github-token }}
+
+      - name: "Add Composer config."
+        run: |
+          composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
+
+      - name: 'Validate Composer file.'
+        run: |
+          composer validate --working-dir=tools --ansi --strict
+          composer validate --ansi --strict
+
+      - name: 'Get Composer Cache Directory.'
+        id: 'composer-cache'
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: 'Sets up Dev Tool Caching.'
+        uses: 'actions/cache@v4.1.2'
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('tools/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-tools-
+
+      - name: 'Sets up Project Caching.'
+        uses: 'actions/cache@v4.1.2'
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
+
+      - name: 'Install dependencies.'
+        run: |
+          composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: 'Logs debug information.'
+        run: |
+          php --version
+          composer --version
+          php ./tools/vendor/bin/phpunit --version
+
+      - name: 'Run PHP Unit tests.'
+        run: |
+          composer dump-autoload --dev
+          composer run test-phpunit
+
+  phpstan:
+    name: "PHP Stan"
+    needs: php-unit
+    uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.12.0
+    with:
+      runs-on: 'self-hosted'
+      version-php: '8.3'
+    secrets: inherit
+
+  notify-failure:
+    name: "Notify on failure."
+    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    needs:
+      - php-security
+      - php-lint
+      - phpcs
+      - php-unit
+      - phpstan
+    runs-on: 'self-hosted'
+    steps:
+      - name: "Failure notification."
+        id: 'slack'
+        uses: 'slackapi/slack-github-action@v2.0.0'
+        with:
+          channel-id: 'failed-updates'
+          payload: |
+            {
+              "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}.\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View>"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}

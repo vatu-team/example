@@ -1,0 +1,77 @@
+
+:root {
+
+	/*
+	* z-idex
+	*/
+	--z-index-0:    0; /* [0] */
+	--z-index-1:   10; /* [1] */
+	--z-index-2:   20; /* [2] */
+	--z-index-3:   30; /* [3] */
+	--z-index-4:   40; /* [4] */
+	--z-index-5:   50; /* [5] */
+	--z-index-6:   60; /* [6] */
+	--z-index-7:   70; /* [7] */
+	--z-index-8:   80; /* [8] */
+	--z-index-9:   90; /* [9] */
+	--z-index-10: 100; /* [10] */
+
+	/*
+	* Spacing
+	* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1440,16,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|2.5|3|4|6,xs-l|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl|2xl-4xl&g=s,l,xl,12
+	*/
+	--spacing-global-padding: var( --gap );
+	--gap: clamp(1rem, 0.599rem + 2.139vw, 4rem);
+
+	/* Replace with generated spacing */
+
+	/* One-up pairs */
+	/* Replace with generated spacing */
+
+	/* Custom pairs */
+	/* Replace with generated spacing */
+}
+
+
+/*
+Grid
+*/
+
+body .is-layout-flex {
+	gap:var( --gap );
+}
+
+.wp-site-blocks,
+.is-root-container {
+	/* margin:20px clamp(1rem, 0.599rem + 2.139vw, 4rem); */
+}
+
+.wp-site-blocks {
+	display:grid;
+	grid-template-columns:repeat(12, 1fr);
+	gap:var( --gap );
+}
+
+.wp-site-blocks header,
+.wp-site-blocks main,
+.wp-site-blocks footer {
+	grid-column: 1 / span 12;
+}
+
+.wp-block-columns {
+	background:var( --color--pink );
+}
+
+.wp-block-column {
+	background: var( --color--cream );
+	color: var( --color--primary );
+	min-height:300px;
+	place-content: center;
+	display: flex;
+	place-items: center;
+}
+/*
+.alignfull {
+	margin-left: calc(-1 * clamp(1rem, 0.599rem + 2.139vw, 4rem));
+	margin-right: calc(-1 * clamp(1rem, 0.599rem + 2.139vw, 4rem));
+} */

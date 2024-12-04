@@ -1,0 +1,14 @@
+a,
+main .wp-block-post-content a:where(:not(.wp-element-button)) {
+	color: var( --color-link );
+}
+
+a:hover,
+main a:where(:not(.wp-element-button)):hover {
+	color: var( --color-link-hover );
+}
+
+a:visited,
+main a:where(:not(.wp-element-button)):visited {
+	color: var( --color-link-visited );
+}

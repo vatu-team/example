@@ -1,0 +1,34 @@
+/*
+1.4 Animations
+*/
+
+/* Transitions
+ *
+ * @link https://stephaniewalter.design/blog/enhancing-user-experience-with-css-animations/
+ * @link https://valhead.com/2016/05/05/how-fast-should-your-ui-animations-be/
+ *
+ * 1. Instant: Almost instant durations(<100ms) for fades and color animations.
+ * 2. Shorter durations: (100ms – 300ms) for simpler effects and relatively
+ *    small-sized animations. Also use those for user initiated action that
+ *    need feedback (touch, click, swipe, etc.)
+ * 3. Longer durations (> 300ms) for more complex effects and larger scale
+      animations (such as page transitions or moving objects on and offscreen)
+ * 4. Slow animations (> 500ms) for large movements and background elements
+ *    that bring mood
+  =========================================================================== */
+:root {
+	--transitions-duration-instant:      100ms;
+	--transitions-duration-fast:         200ms;
+	--transitions-duration-slower:       400ms;
+	--transitions-duration-slow:         600ms;
+	--transitions-timing:                cubic-bezier(0.75, 0.02, 0.5, 1);
+}
+
+@media( prefers-reduced-motion: reduce ) {
+	:root {
+	/* If the user has expressed their preference for reduced motion. */
+	}
+}
+
+/* Animations
+   =========================================================================== */

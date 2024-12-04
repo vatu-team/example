@@ -1,0 +1,197 @@
+/*
+Typography
+*/
+
+:root {
+
+	/* Font Weights
+	*
+	* 1. 100 - Thin (Hairline).
+	* 2. 200 - Extra Light (Ultra Light).
+	* 3. 300 - Light.
+	* 4. 400 - Normal.
+	* 5. 500 - Medium.
+	* 6. 600 - Semi Bold (Demi Bold).
+	* 7. 700 - Bold.
+	* 8. 800 - Extra Bold (Ultra Bold).
+	* 9. 900 - Black (Heavy).
+	*/
+	--font-weight-thin: 				400; /* [1] */
+	--font-weight-light-extra: 	400; /* [2] */
+	--font-weight-light: 				400; /* [3] */
+	--font-weight-normal: 			400; /* [4] */
+	--font-weight-medium: 			400; /* [5] */
+	--font-weight-bold-semi: 		700; /* [6] */
+	--font-weight-bold: 				700; /* [7] */
+	--font-weight-bold-extra: 	700; /* [8] */
+	--font-weight-black: 				700; /* [9] */
+
+	/*
+	* Body Type
+	*/
+	--font-size--body-xs: 			0.75rem; /* 12px */
+	--line-height--body-xs: 		1.3333; /* 16px */
+	--letter-spacing--body-xs: 	0.01em;
+
+	--font-size--body-s: 				0.875rem; /* 14px */
+	--line-height--body-s: 			1.4285; /* 20px */
+	--letter-spacing--body-s: 	0.0025em;
+
+	--font-size--body-m: 				1.125rem; /* 18px */
+	--line-height--body-m: 			1.5555; /* 24px */
+	--letter-spacing--body-m: 	0.0025em;
+
+	--font-size--body-l: 				1.25rem; /* 20px */
+	--line-height--body-l: 			1.4; /* 28px */
+	--letter-spacing--body-l: 	0.0025em;
+
+	--line-height--body:				1;
+
+	/*
+	* Heading Type
+	*/
+  --font-size--heading-xs: 				clamp(1.13rem, calc(1.13rem + 0.00vw), 1.13rem); /* 18px to 18px */
+	--letter-spacing--heading-xs: 	1;
+
+  --font-size--heading-s: 				clamp(1.35rem, calc(1.32rem + 0.14vw), 1.45rem); /* 21.6px to 23.2px */
+	--letter-spacing--heading-s: 		1;
+
+  --font-size--heading-m: 				clamp(1.62rem, calc(1.55rem + 0.36vw), 1.87rem); /* 25.9px to 29.9px */
+	--letter-spacing--heading-m: 		1;
+
+  --font-size--heading-l: 				clamp(1.94rem, calc(1.81rem + 0.67vw), 2.41rem); /* 31.1px to 38.5px */
+	--letter-spacing--heading-l: 		1;
+
+  --font-size--heading-xl: 				clamp(2.33rem, calc(2.11rem + 1.10vw), 3.11rem); /* 37.3px to 49.7px */
+	--letter-spacing--heading-xl: 	1;
+
+  --font-size--heading-xxl: 			clamp(2.80rem, calc(2.46rem + 1.72vw), 4.00rem); /* 44.8px to 64px */
+	--letter-spacing--heading-xxl: 	1;
+
+	--line-height--heading: 				1.5;
+
+	/*
+	* Font Stacks
+	*/
+	--font-family--heading: 	Constantia, Georgia, serif;
+	--font-family--body: 			-apple-system, blinkmacsystemfont, helvetica, arial, sans-serif;
+	--font-family--code: 			'SF Mono', 'Monaco', 'Inconsolata', 'Source Code Pro', monospace;
+	--font-family--pre: 			'Courier 10 Pitch', courier, monospace;
+
+}
+
+
+/*
+* Custom Typefaces
+* Include @font-face declarations here
+*/
+
+/*
+* Elements
+*/
+html {
+	line-height: var( --line-height--body );
+	font-family: var( --font-family--body, sans-serif );
+	font-feature-settings: "dlig";
+	font-size:16px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-variant-ligatures: discretionary-ligatures;
+	font-weight: 400;
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
+}
+
+dfn,
+cite,
+em {
+	font-style: italic;
+}
+
+i {
+	font-style: normal;
+}
+
+:is(h1,h2,h3,h4,h5,h6) + p {
+  margin-top: 0;
+}
+
+@media ( min-width: 1024px ) {
+	:is(h1,h2,h3,h4,h5,h6) + p {
+		margin-top: 32px;
+	}
+}
+
+.has-x-small-font-size {
+	font-size: var( --font-size--body-xs );
+	letter-spacing: var( --letter-spacing--body-xs );
+}
+
+.has-small-font-size  {
+	font-size: var( --font-size--body-s );
+	line-height: var( --line-height--body-s );
+	letter-spacing: var( --letter-spacing--body-s );
+}
+
+.has-medium-font-size  {
+	font-size: var( --font-size--body-m );
+	line-height: var( --line-height--body-m );
+	letter-spacing: var( --letter-spacing--body-m );
+}
+
+.has-large-font-size  {
+	font-size: var( --font-size--body-l );
+	line-height: var( --line-height--body-l );
+	letter-spacing: var( --letter-spacing--body-l );
+}
+
+/*
+* Headings
+*/
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var( --font-family--heading );
+	line-height: var( --line-height--heading );
+	font-weight: var( --font-weight-normal );
+}
+
+h6,
+.has-heading-x-small-font-size {
+	font-size: var( --font-size--heading-xs );
+	letter-spacing: var( --letter-spacing--heading-xs );
+}
+
+h5,
+.has-heading-small-font-size {
+	font-size: var( --font-size--heading-s );
+	letter-spacing: var( --letter-spacing--heading-s );
+}
+
+h4,
+.has-heading-medium-font-size {
+	font-size: var( --font-size--heading-m );
+	letter-spacing: var( --letter-spacing--heading-m );
+}
+
+h3,
+.has-heading-large-font-size {
+	font-size: var( --font-size--heading-l );
+	letter-spacing: var( --letter-spacing--heading-l );
+}
+
+h2,
+.has-heading-x-large-font-size {
+	font-size: var( --font-size--heading-xl );
+	letter-spacing: var( --letter-spacing--heading-xl );
+}
+
+h1,
+.has-heading-xx-large-font-size {
+	font-size: var( --font-size--heading-xxl );
+	letter-spacing: var( --letter-spacing--heading-xxl );
+}
+
+/* Remove margin-block-start if any element immediately follows a H tag */
+.site-content :is( h1 + *, h2 + *, h3 + *, h4 + *, h5 + *, h6 + * ) {
+	margin-block-start: var( --space-xs-s );
+}

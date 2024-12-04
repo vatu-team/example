@@ -1,0 +1,35 @@
+{
+  "name": "vatu-demo",
+  "version": "0.1.0",
+  "description": "## Project URLS",
+  "main": "index.js",
+  "config": {},
+  "engines": {
+    "node": "^22.11",
+    "npm": "^10.9"
+  },
+  "scripts": {
+    "build": "run-p 'build:theme'",
+    "watch": "run-p 'watch:theme'",
+    "build:theme": "wp-scripts build --config ./theme.webpack.config.js",
+    "watch:theme": "wp-scripts watch --config ./theme.webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vatu-team/demo.vatu.dev.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/vatu-team/demo.vatu.dev/#readme",
+  "devDependencies": {
+    "@wordpress/create-block": "^4.56.0",
+    "@wordpress/scripts": "^30.6.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "make-dir-cli": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "path": "^0.12.7",
+    "svg-sprite": "2.0.1",
+    "terser": "^5.36.0",
+    "webpack-remove-empty-scripts": "^1.0.4"
+  }
+}

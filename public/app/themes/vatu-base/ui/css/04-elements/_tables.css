@@ -1,0 +1,9 @@
+table {
+	font-size: var( --font-size--body-s );
+}
+
+table + figcaption {
+	font-size: var( --font-size--body-s );
+	color: var( --color-neutral-70 );
+	margin-top: var( --space-xs-s );
+}

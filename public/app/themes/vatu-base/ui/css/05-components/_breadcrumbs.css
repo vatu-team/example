@@ -1,0 +1,24 @@
+.yoast-breadcrumbs {
+	font-size:var(--font-size--body-s);
+}
+
+.yoast-breadcrumbs span {
+	margin: 0 0.5em;
+	display:inline-block;
+}
+
+.yoast-breadcrumbs > span,
+.yoast-breadcrumbs > span > span:first-of-type {
+	margin-left:0;
+}
+
+.yoast-breadcrumbs span.breadcrumb_last {
+}
+
+.yoast-breadcrumbs a {
+	text-decoration:none;
+}
+
+.yoast-breadcrumbs a:hover {
+	text-decoration:underline;
+}

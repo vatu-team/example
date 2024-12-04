@@ -1,0 +1,56 @@
+/*
+1.4 Color
+*/
+
+/*
+Brand Colors
+*/
+
+:root {
+
+	--body-background: hsla(180, 6.7%, 97.1%, 1);
+
+	/*
+	Brand
+	*/
+	--color--primary: hsla( 217, 96%, 11%, 1 );
+	--color--secondary: hsla( 248, 31%, 23%, 1 );
+	--color--tertiary: hsla( 286, 31%, 48%, 1 );
+	--color--pink: hsla( 327, 41%, 72%, 1 );
+	--color--cream: hsla( 354, 46%, 83%, 1 );
+
+	/*
+	Neutral
+	*/
+
+	/*
+	Notifications
+	*/
+	--color-success-10: hsla(111, 70%, 87%, 1);
+	--color-success-50: hsla(111, 70%, 37%, 1);
+	--color-success-90: hsla(111, 70%, 27%, 1);
+
+	--color-error-10: hsla(12, 80%, 87%, 1);
+	--color-error-50: hsla(12, 70%, 47%, 1);
+	--color-error-90: hsla(12, 70%, 27%, 1);
+
+	/*
+	Text colors
+	*/
+	--color-text: hsla(105, 4%, 22%, 1);
+
+	/*
+	Link colors
+	*/
+	--color-link: var( --color-text );
+	--color-link-visited: var( --color-text );
+	--color-link-hover: var( --color-text );
+
+}
+
+/*
+* Elements
+*/
+html {
+	color: var( --color-text );
+}

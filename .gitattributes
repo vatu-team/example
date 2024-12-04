@@ -1,0 +1,17 @@
+# Exclude files from GitHub's language statistics
+# https://github.com/github/linguist#using-gitattributes
+
+/.bin	linguist-vendored
+/.github	linguist-vendored
+/.vscode	linguist-vendored
+/cypress	linguist-vendored
+/node_modules	linguist-vendored
+/vendor	linguist-vendored
+
+/example.env linguist-vendored
+/composer.json	linguist-vendored
+/cypress.json	linguist-vendored
+/package.json	linguist-vendored
+/phpcs.xml	linguist-vendored
+/phpmd.xml	linguist-vendored
+/wp-cli.yml	linguist-vendored
