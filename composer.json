@@ -43,7 +43,7 @@
     "wpackagist-plugin/wp-robots-txt": "^1.3.4"
   },
   "require-dev": {
-    "ergebnis/composer-normalize": "^2.44",
+    "ergebnis/composer-normalize": "^2.45",
     "rarst/laps": "^3.3.7",
     "wpackagist-plugin/debug-bar-post-types": "^2.0.0",
     "wpackagist-plugin/duplicate-post": "^4.5.0",
