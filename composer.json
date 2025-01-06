@@ -30,7 +30,7 @@
     "roots/wordpress": "^6.7",
     "roots/wp-config": "^1.0.0",
     "roots/wp-password-bcrypt": "^1.2.0",
-    "thoughtsideas/wp-infrastructure": "^0.1.0",
+    "thoughtsideas/wp-infrastructure": "^0.2.0",
     "vlucas/phpdotenv": "^5.6.1",
     "wpackagist-plugin/aryo-activity-log": "^2.11.2",
     "wpackagist-plugin/better-passwords": "^1.8.0",
