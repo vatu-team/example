@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94d509ce7196d3a56355724a59056226",
+    "content-hash": "d82c6621abfe5919a7da4317e82c1fb8",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -3550,15 +3550,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-crontrol",
-            "version": "1.17.1",
+            "version": "1.18.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-crontrol/",
-                "reference": "tags/1.17.1"
+                "reference": "tags/1.18.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.17.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.18.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -3594,5 +3594,5 @@
         "php": "~8.3"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
