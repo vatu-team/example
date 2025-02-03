@@ -48,7 +48,7 @@
     "wpackagist-plugin/debug-bar-post-types": "^2.0.0",
     "wpackagist-plugin/duplicate-post": "^4.5.0",
     "wpackagist-plugin/log-deprecated-notices": "^0.4.1",
-    "wpackagist-plugin/query-monitor": "^3.17.0",
+    "wpackagist-plugin/query-monitor": "^3.17.1",
     "wpackagist-plugin/redis-cache": "^2.5.4",
     "wpackagist-plugin/rewrite-rules-inspector": "^1.4.0",
     "wpackagist-plugin/rewrite-testing": "^0.1.1",
