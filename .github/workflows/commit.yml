@@ -89,7 +89,7 @@ jobs:
   php-lint:
     name: "PHP Parallel Lint"
     needs: php-security
-    uses: vatu-team/workflows/.github/workflows/php-parallel-lint.yml@1.12.0
+    uses: vatu-team/workflows/.github/workflows/php-parallel-lint.yml@1.14.0
     with:
       runs-on: 'ubuntu-24.04'
       version-php: '8.3'
@@ -98,7 +98,7 @@ jobs:
   phpcs:
     name: "PHP CodeSniffer"
     needs: php-lint
-    uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.12.0
+    uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.14.0
     with:
       runs-on: 'ubuntu-24.04'
       version-php: '8.3'
@@ -181,7 +181,7 @@ jobs:
   phpstan:
     name: "PHP Stan"
     needs: php-unit
-    uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.12.0
+    uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.14.0
     with:
       runs-on: 'ubuntu-24.04'
       version-php: '8.3'
