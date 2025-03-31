@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c856af5b68d891666273f7f321fcbc4",
+    "content-hash": "2fd56967fa2d23fa82781b7ff0bf0e90",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -2261,15 +2261,15 @@
         },
         {
             "name": "wpackagist-plugin/mailgun",
-            "version": "2.1.6",
+            "version": "2.1.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/mailgun/",
-                "reference": "tags/2.1.6"
+                "reference": "tags/2.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mailgun.2.1.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/mailgun.2.1.7.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
