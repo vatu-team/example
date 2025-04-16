@@ -27,7 +27,7 @@
     "cweagans/composer-patches": "^1.7.3",
     "oscarotero/env": "^2.1.1",
     "roots/bedrock-autoloader": "^1.0.4",
-    "roots/wordpress": "^6.7",
+    "roots/wordpress": "^6.8",
     "roots/wp-config": "^1.0.0",
     "roots/wp-password-bcrypt": "^1.2.0",
     "thoughtsideas/wp-infrastructure": "^0.2.0",
