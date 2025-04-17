@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "09ebcc15512cc6ce87c36dd0a526f1a6",
+    "content-hash": "6ad4b5bb13ec08f9f3b0c072cfa3ce73",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -3385,15 +3385,15 @@
         },
         {
             "name": "wpackagist-plugin/user-switching",
-            "version": "1.9.1",
+            "version": "1.9.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-switching/",
-                "reference": "tags/1.9.1"
+                "reference": "tags/1.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-switching.1.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/user-switching.1.9.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
