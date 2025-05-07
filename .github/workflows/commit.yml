@@ -200,7 +200,7 @@ jobs:
     steps:
       - name: "Failure notification."
         id: 'slack'
-        uses: 'slackapi/slack-github-action@v2.0.0'
+        uses: 'slackapi/slack-github-action@v2.1.0'
         with:
           channel-id: 'failed-updates'
           payload: |
