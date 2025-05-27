@@ -30,6 +30,6 @@
     "path": "^0.12.7",
     "svg-sprite": "2.0.1",
     "terser": "^5.39.2",
-    "webpack-remove-empty-scripts": "^1.1.0"
+    "webpack-remove-empty-scripts": "^1.1.1"
   }
 }
