@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d77437003eea0d0a84b509e7c5b88ee3",
+    "content-hash": "f62cf1869e97a50d66bfd7891257f3f2",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -2318,15 +2318,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "25.4",
+            "version": "25.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/25.4"
+                "reference": "tags/25.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.25.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.25.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
