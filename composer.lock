@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f62cf1869e97a50d66bfd7891257f3f2",
+    "content-hash": "1de7c1fcca292ee4e8fb5148f88aa261",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -3315,15 +3315,15 @@
         },
         {
             "name": "wpackagist-plugin/redis-cache",
-            "version": "2.5.4",
+            "version": "2.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redis-cache/",
-                "reference": "tags/2.5.4"
+                "reference": "tags/2.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redis-cache.2.5.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/redis-cache.2.6.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
