@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4af65814016928db304df224d8ccdaf1",
+    "content-hash": "95dd968581056c2da08b2037f2244d13",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -2258,15 +2258,15 @@
         },
         {
             "name": "wpackagist-plugin/limit-login-attempts-reloaded",
-            "version": "2.26.20",
+            "version": "2.26.21",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/limit-login-attempts-reloaded/",
-                "reference": "tags/2.26.20"
+                "reference": "tags/2.26.21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts-reloaded.2.26.20.zip"
+                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts-reloaded.2.26.21.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
