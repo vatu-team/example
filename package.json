@@ -22,7 +22,7 @@
   "license": "ISC",
   "homepage": "https://github.com/vatu-team/demo.vatu.dev/#readme",
   "devDependencies": {
-    "@wordpress/create-block": "^4.71.0",
+    "@wordpress/create-block": "^4.72.0",
     "@wordpress/scripts": "^30.21.0",
     "copy-webpack-plugin": "^13.0.1",
     "make-dir-cli": "^4.0.0",
