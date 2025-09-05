@@ -55,7 +55,7 @@
     "wpackagist-plugin/transients-manager": "^2.0.7",
     "wpackagist-plugin/user-switching": "^1.10.0",
     "wpackagist-plugin/wordpress-beta-tester": "^3.6.4",
-    "wpackagist-plugin/wordpress-importer": "^0.8.4",
+    "wpackagist-plugin/wordpress-importer": "^0.9.0",
     "wpackagist-plugin/wp-crontrol": "^1.19.2",
     "wpackagist-theme/twentytwentyfour": "^1.3"
   },
