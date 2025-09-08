@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9f8c0ca48fa4af1ebb28e8cf1a77292",
+    "content-hash": "be04dfe81afc3a1fce4703bfcb895b1c",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -2312,15 +2312,15 @@
         },
         {
             "name": "wpackagist-plugin/two-factor",
-            "version": "0.14.0",
+            "version": "0.14.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/two-factor/",
-                "reference": "tags/0.14.0"
+                "reference": "tags/0.14.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/two-factor.0.14.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/two-factor.0.14.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
